@@ -1,5 +1,6 @@
+"use client"
 import { useState, useEffect } from 'react'
-import CelebrityCard from '../components/CelebrityCard'
+import CelebrityCard from './components/celebirityCard'
 
 export default function Home() {
   const [celebrities, setCelebrities] = useState([])

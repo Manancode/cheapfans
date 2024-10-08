@@ -4,19 +4,26 @@ import PaymentModal from './PaymentModal'
 export default function CelebrityCard({ celebrity, onVote }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const handleUpvote = async () => {
+  const handleUpvote = () => {
     setIsModalOpen(true)
   }
 
   const handlePaymentSuccess = async () => {
-    const res = await fetch(`/api/upvote`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ celebrityId: celebrity.id }),
-    })
+    try {
+      const res = await fetch(`/api/upvote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ celebrityId: celebrity.id }),
+      })
 
-    if (res.ok) {
-      onVote()
+      if (res.ok) {
+        onVote()
+      } else {
+        throw new Error('Failed to upvote')
+      }
+    } catch (error) {
+      console.error('Error upvoting:', error)
+      // Handle error (e.g., show an error message to the user)
     }
     setIsModalOpen(false)
   }
