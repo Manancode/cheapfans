@@ -1,7 +1,7 @@
 import { ChevronUp } from 'lucide-react'
 
 const creators = [
-  { id: 1, name: 'Emma Johnson', image: '/placeholder.svg?height=300&width=300&text=Emma+J', votes: 1234 },
+  { id: 1, name: 'Taylor swift', image: '/assets/taylor.jpg', votes: 1234 },
   { id: 2, name: 'Liam Smith', image: '/placeholder.svg?height=300&width=300&text=Liam+S', votes: 987 },
   { id: 3, name: 'Olivia Brown', image: '/placeholder.svg?height=300&width=300&text=Olivia+B', votes: 2345 },
   { id: 4, name: 'Noah Davis', image: '/placeholder.svg?height=300&width=300&text=Noah+D', votes: 876 },
